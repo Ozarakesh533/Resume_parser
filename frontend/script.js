@@ -3,7 +3,7 @@ class AIResumeParser {
     constructor() {
         this.files = [];
         this.results = [];
-        this.apiUrl = 'http://127.0.0.1:8080'; // FastAPI backend URL
+        this.apiUrl = 'https://web-production-33afa.up.railway.app'; // FastAPI backend URL
         this.processingSteps = [
             'Initializing Neural Networks...',
             'Analyzing Document Structure...',
