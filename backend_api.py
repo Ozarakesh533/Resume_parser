@@ -148,14 +148,15 @@ async def health_check():
     return {"status": "healthy", "message": "AI Resume Parser is operational"}
 
 if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8080))  # Railway gives PORT
     print("🚀 Starting AI Resume Parser API...")
-    print("📡 Frontend should connect to: http://127.0.0.1:8080")
-    print("🔗 API Documentation: http://127.0.0.1:8080/docs")
+    print(f"📡 Listening on: http://0.0.0.0:{port}")
+    print(f"🔗 API Documentation: http://0.0.0.0:{port}/docs")
     
     uvicorn.run(
         app, 
-        host="127.0.0.1", 
-        port=8080,
-        reload=False,  # Fixed: disable reload when running directly
+        host="0.0.0.0",   # IMPORTANT for cloud
+        port=port,
+        reload=False,  
         log_level="info"
     )
