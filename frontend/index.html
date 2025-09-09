@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Resume Parser Pro</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- AI Particle Background -->
+    <div class="ai-particles" id="aiParticles"></div>
+    
+    <!-- Neural Network Grid -->
+    <div class="neural-grid" id="neuralGrid"></div>
+    
+    <!-- Main Container -->
+    <div class="ai-container">
+        <!-- AI Header with Holographic Effect -->
+        <header class="ai-header">
+            <div class="holographic-logo">
+                <div class="logo-core">
+                    <i class="fas fa-brain"></i>
+                    <div class="neural-rings">
+                        <div class="ring ring-1"></div>
+                        <div class="ring ring-2"></div>
+                        <div class="ring ring-3"></div>
+                    </div>
+                </div>
+                <h1 class="ai-title">AI RESUME PARSER</h1>
+                <div class="ai-subtitle">Neural Network Intelligence</div>
+            </div>
+            
+            <!-- AI Status Indicators -->
+            <div class="ai-status">
+                <div class="status-item">
+                    <div class="status-dot active"></div>
+                    <span>AI Core Active</span>
+                </div>
+                <div class="status-item">
+                    <div class="status-dot active"></div>
+                    <span>Neural Processing</span>
+                </div>
+                <div class="status-item">
+                    <div class="status-dot active"></div>
+                    <span>Quantum Ready</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- AI Processing Hub -->
+        <main class="ai-main">
+            <!-- Upload Neural Interface -->
+            <section class="neural-upload">
+                <div class="upload-hub">
+                    <div class="hub-header">
+                        <div class="ai-icon">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <h2>Neural Upload Interface</h2>
+                        <p>Quantum File Processing & AI Analysis</p>
+                    </div>
+                    
+                    <div class="quantum-upload-area" id="uploadArea">
+                        <div class="upload-hologram">
+                            <div class="hologram-core">
+                                <i class="fas fa-file-upload"></i>
+                                <div class="scanning-line"></div>
+                            </div>
+                            <div class="upload-info">
+                                <h3>Drop Files for AI Analysis</h3>
+                                <p>Supported: PDF, DOCX, TXT, RTF</p>
+                                <p>Quantum Processing Limit: 10MB per file</p>
+                                <button class="quantum-btn" id="browseBtn">
+                                    <span class="btn-text">Initialize Upload</span>
+                                    <div class="btn-particles"></div>
+                                </button>
+                            </div>
+                        </div>
+                        <input type="file" id="fileInput" multiple accept=".pdf,.docx,.txt,.rtf" style="display: none;">
+                    </div>
+
+                    <!-- AI File Analysis -->
+                    <div class="ai-file-analysis" id="fileList"></div>
+
+                    <!-- Quantum Processing Button -->
+                    <button class="quantum-process-btn" id="parseBtn" disabled>
+                        <div class="btn-core">
+                            <i class="fas fa-brain"></i>
+                            <span>Initialize AI Processing</span>
+                        </div>
+                        <div class="btn-aura"></div>
+                    </button>
+                </div>
+            </section>
+
+            <!-- AI Processing Chamber -->
+            <section class="ai-processing" id="loadingSection" style="display: none;">
+                <div class="processing-chamber">
+                    <div class="chamber-core">
+                        <div class="ai-brain">
+                            <div class="brain-lobes">
+                                <div class="lobe lobe-1"></div>
+                                <div class="lobe lobe-2"></div>
+                                <div class="lobe lobe-3"></div>
+                                <div class="lobe lobe-4"></div>
+                            </div>
+                            <div class="neural-connections"></div>
+                        </div>
+                        <h3>AI Neural Processing Active</h3>
+                        <p>Analyzing resume data with quantum precision</p>
+                        
+                        <!-- Quantum Progress Bar -->
+                        <div class="quantum-progress">
+                            <div class="progress-core">
+                                <div class="progress-fill" id="progressFill"></div>
+                                <div class="progress-particles"></div>
+                            </div>
+                            <div class="progress-stats">
+                                <span class="stat">Processing: <span id="processingStatus">Initializing...</span></span>
+                                <span class="stat">AI Confidence: <span id="aiConfidence">0%</span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- AI Results Matrix -->
+            <section class="ai-results" id="resultsSection" style="display: none;">
+                <div class="results-matrix">
+                    <div class="matrix-header">
+                        <h2>AI Analysis Results Matrix</h2>
+                        <div class="matrix-stats">
+                            <div class="stat-card success">
+                                <div class="stat-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <span class="stat-value" id="successCount">0</span>
+                                <span class="stat-label">Successful</span>
+                            </div>
+                            <div class="stat-card error">
+                                <div class="stat-icon">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                                <span class="stat-value" id="errorCount">0</span>
+                                <span class="stat-label">Errors</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="results-grid" id="resultsGrid"></div>
+                    
+                    <!-- Quantum Export -->
+                    <div class="quantum-export">
+                        <button class="export-quantum" id="exportBtn">
+                            <div class="export-core">
+                                <i class="fas fa-download"></i>
+                                <span>Export AI Analysis</span>
+                            </div>
+                            <div class="export-aura"></div>
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- AI Footer -->
+        <footer class="ai-footer">
+            <div class="footer-content">
+                <div class="ai-signature">
+                    <span class="signature-text">Powered by Advanced AI Neural Networks</span>
+                    <div class="signature-line"></div>
+                </div>
+                
+                <!-- Developer Information -->
+                <div class="developer-info">
+                    <div class="developer-name">Developed by: [Your Name Here]</div>
+                    <div class="developer-title">AI & Machine Learning Engineer</div>
+                </div>
+                
+                <p class="copyright">&copy; 2024 AI Resume Parser Pro - Quantum Intelligence. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- AI Results Modal -->
+    <div class="ai-modal" id="resultModal">
+        <div class="modal-hologram">
+            <div class="modal-header">
+                <h3 id="modalTitle">AI Analysis Details</h3>
+                <button class="modal-close" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- AI Notification System -->
+    <div class="ai-notifications" id="notifications"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

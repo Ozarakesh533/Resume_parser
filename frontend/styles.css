@@ -1,0 +1,1288 @@
+/* Advanced AI Resume Parser - Futuristic Interface */
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Rajdhani', 'Orbitron', monospace;
+    background: #000;
+    color: #00ffff;
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* AI Particle Background */
+.ai-particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background: radial-gradient(ellipse at center, #001122 0%, #000000 100%);
+}
+
+.ai-particles::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(2px 2px at 20px 30px, #00ffff, transparent),
+        radial-gradient(2px 2px at 40px 70px, #ff00ff, transparent),
+        radial-gradient(1px 1px at 90px 40px, #ffff00, transparent),
+        radial-gradient(1px 1px at 130px 80px, #00ff00, transparent),
+        radial-gradient(2px 2px at 160px 30px, #ff0080, transparent);
+    background-repeat: repeat;
+    background-size: 200px 100px;
+    animation: particle-float 20s linear infinite;
+    opacity: 0.3;
+}
+
+@keyframes particle-float {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(-100px); }
+}
+
+/* Neural Network Grid */
+.neural-grid {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: 
+        linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: grid-move 30s linear infinite;
+    opacity: 0.2;
+}
+
+@keyframes grid-move {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(50px, 50px); }
+}
+
+/* Main Container */
+.ai-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* AI Header with Holographic Effect */
+.ai-header {
+    text-align: center;
+    margin-bottom: 50px;
+    padding: 40px 0;
+    position: relative;
+}
+
+.holographic-logo {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.logo-core {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+    width: 120px;
+    height: 120px;
+}
+
+.logo-core i {
+    font-size: 4rem;
+    color: #00ffff;
+    text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff;
+    animation: pulse-glow 2s ease-in-out infinite alternate;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+.neural-rings {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 120px;
+    height: 120px;
+}
+
+.ring {
+    position: absolute;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    animation: ring-rotate 4s linear infinite;
+}
+
+.ring-1 {
+    width: 80px;
+    height: 80px;
+    top: 20px;
+    left: 20px;
+    border-top-color: #00ffff;
+    animation-duration: 4s;
+}
+
+.ring-2 {
+    width: 100px;
+    height: 100px;
+    top: 10px;
+    left: 10px;
+    border-right-color: #ff00ff;
+    animation-duration: 6s;
+    animation-direction: reverse;
+}
+
+.ring-3 {
+    width: 120px;
+    height: 120px;
+    top: 0;
+    left: 0;
+    border-bottom-color: #ffff00;
+    animation-duration: 8s;
+}
+
+@keyframes ring-rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse-glow {
+    0% { text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff; }
+    100% { text-shadow: 0 0 30px #00ffff, 0 0 60px #00ffff, 0 0 80px #00ffff; }
+}
+
+.ai-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 3rem;
+    font-weight: 900;
+    background: linear-gradient(45deg, #00ffff, #ff00ff, #ffff00, #00ff00);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient-shift 3s ease-in-out infinite;
+    text-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+    margin-bottom: 10px;
+}
+
+.ai-subtitle {
+    font-size: 1.2rem;
+    color: #888;
+    font-weight: 300;
+    letter-spacing: 3px;
+}
+
+@keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* AI Status Indicators */
+.ai-status {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.status-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.status-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #00ff00;
+    box-shadow: 0 0 10px #00ff00;
+    animation: status-pulse 2s ease-in-out infinite;
+}
+
+.status-dot.active {
+    background: #00ff00;
+    box-shadow: 0 0 10px #00ff00;
+}
+
+@keyframes status-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* AI Main Content */
+.ai-main {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* Neural Upload Interface */
+.neural-upload {
+    background: rgba(0, 17, 34, 0.8);
+    border: 1px solid #00ffff;
+    border-radius: 20px;
+    padding: 40px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.neural-upload::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.1), transparent);
+    animation: scan-line 3s ease-in-out infinite;
+}
+
+@keyframes scan-line {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+.hub-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.ai-icon {
+    font-size: 3rem;
+    color: #00ffff;
+    margin-bottom: 20px;
+    animation: icon-float 3s ease-in-out infinite;
+}
+
+@keyframes icon-float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.hub-header h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #00ffff;
+    margin-bottom: 10px;
+}
+
+.hub-header p {
+    color: #888;
+    font-size: 1.1rem;
+}
+
+/* Quantum Upload Area */
+.quantum-upload-area {
+    border: 2px dashed #00ffff;
+    border-radius: 15px;
+    padding: 60px 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background: rgba(0, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.quantum-upload-area:hover {
+    border-color: #ff00ff;
+    background: rgba(255, 0, 255, 0.1);
+    transform: scale(1.02);
+}
+
+.quantum-upload-area.dragover {
+    border-color: #ffff00;
+    background: rgba(255, 255, 0, 0.1);
+    transform: scale(1.05);
+}
+
+.upload-hologram {
+    position: relative;
+}
+
+.hologram-core {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.hologram-core i {
+    font-size: 4rem;
+    color: #00ffff;
+    text-shadow: 0 0 20px #00ffff;
+}
+
+.scanning-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #00ffff, transparent);
+    animation: scan-up 2s ease-in-out infinite;
+}
+
+@keyframes scan-up {
+    0% { top: 0; }
+    100% { top: 100%; }
+}
+
+.upload-info h3 {
+    font-size: 1.5rem;
+    color: #00ffff;
+    margin-bottom: 15px;
+}
+
+.upload-info p {
+    color: #888;
+    margin-bottom: 8px;
+}
+
+/* Quantum Button */
+.quantum-btn {
+    background: linear-gradient(45deg, #00ffff, #0080ff);
+    color: #000;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.quantum-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 255, 255, 0.4);
+}
+
+.btn-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, transparent 30%, rgba(255, 255, 255, 0.3) 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.quantum-btn:hover .btn-particles {
+    opacity: 1;
+}
+
+/* AI File Analysis */
+.ai-file-analysis {
+    margin: 30px 0;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.ai-file-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(0, 17, 34, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border-left: 4px solid #00ffff;
+    position: relative;
+    overflow: hidden;
+}
+
+.ai-file-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.1), transparent);
+    animation: file-scan 2s ease-in-out infinite;
+}
+
+@keyframes file-scan {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+.ai-file-item .file-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.ai-file-item .file-icon {
+    font-size: 2rem;
+    color: #00ffff;
+}
+
+.ai-file-item .file-details h4 {
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #00ffff;
+}
+
+.ai-file-item .file-details p {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.ai-file-item .remove-btn {
+    background: #ff0066;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.ai-file-item .remove-btn:hover {
+    background: #ff0044;
+    transform: scale(1.1);
+}
+
+/* Quantum Process Button */
+.quantum-process-btn {
+    width: 100%;
+    background: linear-gradient(45deg, #00ffff, #0080ff, #8000ff);
+    color: #000;
+    border: none;
+    padding: 25px;
+    border-radius: 15px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.quantum-process-btn:hover:not(:disabled) {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 255, 255, 0.4);
+}
+
+.quantum-process-btn:disabled {
+    background: #333;
+    color: #666;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.btn-core {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    position: relative;
+    z-index: 2;
+}
+
+.btn-aura {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0, 255, 255, 0.3) 0%, transparent 70%);
+    animation: aura-pulse 2s ease-in-out infinite;
+}
+
+@keyframes aura-pulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.6; }
+}
+
+/* AI Processing Chamber */
+.ai-processing {
+    background: rgba(0, 17, 34, 0.9);
+    border: 1px solid #00ffff;
+    border-radius: 20px;
+    padding: 50px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 40px rgba(0, 255, 255, 0.3);
+    text-align: center;
+}
+
+.processing-chamber {
+    position: relative;
+}
+
+.ai-brain {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 30px;
+    position: relative;
+}
+
+.brain-lobes {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.lobe {
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #00ffff, #0080ff);
+    animation: lobe-pulse 2s ease-in-out infinite;
+}
+
+.lobe-1 {
+    width: 80px;
+    height: 80px;
+    top: 20px;
+    left: 20px;
+    animation-delay: 0s;
+}
+
+.lobe-2 {
+    width: 70px;
+    height: 70px;
+    top: 30px;
+    right: 30px;
+    animation-delay: 0.5s;
+}
+
+.lobe-3 {
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    left: 40px;
+    animation-delay: 1s;
+}
+
+.lobe-4 {
+    width: 50px;
+    height: 50px;
+    bottom: 50px;
+    right: 50px;
+    animation-delay: 1.5s;
+}
+
+@keyframes lobe-pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.2); opacity: 0.8; }
+}
+
+.neural-connections {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 30% 30%, transparent 0%, transparent 40%, #00ffff 40%, #00ffff 45%, transparent 45%),
+        radial-gradient(circle at 70% 70%, transparent 0%, transparent 40%, #ff00ff 40%, #ff00ff 45%, transparent 45%),
+        radial-gradient(circle at 50% 80%, transparent 0%, transparent 40%, #ffff00 40%, #ffff00 45%, transparent 45%);
+    animation: connection-glow 3s ease-in-out infinite;
+}
+
+@keyframes connection-glow {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+.processing-chamber h3 {
+    font-size: 1.8rem;
+    color: #00ffff;
+    margin-bottom: 15px;
+}
+
+.processing-chamber p {
+    color: #888;
+    margin-bottom: 40px;
+}
+
+/* Quantum Progress Bar */
+.quantum-progress {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.progress-core {
+    width: 100%;
+    height: 20px;
+    background: rgba(0, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #00ffff;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #00ffff, #0080ff, #8000ff);
+    width: 0%;
+    transition: width 0.3s ease;
+    position: relative;
+}
+
+.progress-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.6) 0%, transparent 50%),
+        radial-gradient(circle at 80% 50%, rgba(255, 255, 255, 0.6) 0%, transparent 50%);
+    animation: particle-move 2s linear infinite;
+}
+
+@keyframes particle-move {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.progress-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    color: #888;
+}
+
+/* AI Results Matrix */
+.ai-results {
+    background: rgba(0, 17, 34, 0.8);
+    border: 1px solid #00ffff;
+    border-radius: 20px;
+    padding: 40px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+}
+
+.matrix-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.matrix-header h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #00ffff;
+}
+
+.matrix-stats {
+    display: flex;
+    gap: 20px;
+}
+
+.stat-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 20px;
+    border-radius: 15px;
+    background: rgba(0, 255, 255, 0.1);
+    border: 1px solid #00ffff;
+}
+
+.stat-card.success {
+    background: rgba(0, 255, 0, 0.1);
+    border-color: #00ff00;
+}
+
+.stat-card.error {
+    background: rgba(255, 0, 0, 0.1);
+    border-color: #ff0000;
+}
+
+.stat-icon {
+    font-size: 1.5rem;
+}
+
+.stat-card.success .stat-icon {
+    color: #00ff00;
+}
+
+.stat-card.error .stat-icon {
+    color: #ff0000;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #00ffff;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+/* Advanced Results Grid */
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.ai-result-card {
+    background: rgba(0, 17, 34, 0.6);
+    border-radius: 15px;
+    padding: 25px;
+    border-left: 4px solid #00ffff;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.ai-result-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(0, 255, 255, 0.05), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.ai-result-card:hover::before {
+    opacity: 1;
+}
+
+.ai-result-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 255, 255, 0.2);
+}
+
+.ai-result-card.success {
+    border-left-color: #00ff00;
+}
+
+.ai-result-card.error {
+    border-left-color: #ff0000;
+}
+
+.ai-result-card h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #00ffff;
+}
+
+.ai-result-card .status {
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.ai-result-card .status.success {
+    background: rgba(0, 255, 0, 0.2);
+    color: #00ff00;
+    border: 1px solid #00ff00;
+}
+
+.ai-result-card .status.error {
+    background: rgba(255, 0, 0, 0.2);
+    color: #ff0000;
+    border: 1px solid #ff0000;
+}
+
+.ai-result-card .details {
+    color: #888;
+    font-size: 0.95rem;
+}
+
+/* Advanced Result Details */
+.result-details {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(0, 255, 255, 0.2);
+}
+
+.result-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.metric-item {
+    text-align: center;
+    padding: 10px;
+    background: rgba(0, 255, 255, 0.1);
+    border-radius: 10px;
+    border: 1px solid rgba(0, 255, 255, 0.3);
+}
+
+.metric-value {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #00ffff;
+    display: block;
+}
+
+.metric-label {
+    font-size: 0.8rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Quantum Export */
+.quantum-export {
+    text-align: center;
+}
+
+.export-quantum {
+    background: linear-gradient(45deg, #00ff00, #0080ff);
+    color: #000;
+    border: none;
+    padding: 18px 35px;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.export-quantum:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(0, 255, 0, 0.4);
+}
+
+.export-core {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+    z-index: 2;
+}
+
+.export-aura {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0, 255, 0, 0.3) 0%, transparent 70%);
+    animation: export-aura-pulse 2s ease-in-out infinite;
+}
+
+@keyframes export-aura-pulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.6; }
+}
+
+/* AI Footer */
+.ai-footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 30px;
+    border-top: 1px solid rgba(0, 255, 255, 0.3);
+}
+
+.ai-signature {
+    margin-bottom: 20px;
+}
+
+.signature-text {
+    font-size: 1.1rem;
+    color: #00ffff;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+.signature-line {
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #00ffff, transparent);
+    margin: 15px auto;
+}
+
+.copyright {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.developer-info {
+    margin-top: 15px;
+    padding: 15px;
+    background: rgba(0, 255, 255, 0.1);
+    border-radius: 10px;
+    border: 1px solid rgba(0, 255, 255, 0.3);
+}
+
+.developer-name {
+    font-size: 1.1rem;
+    color: #00ffff;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.developer-title {
+    font-size: 0.9rem;
+    color: #888;
+    font-style: italic;
+}
+
+/* AI Modal */
+.ai-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+.modal-hologram {
+    background: rgba(0, 17, 34, 0.95);
+    margin: 5% auto;
+    padding: 0;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 900px;
+    max-height: 80vh;
+    overflow-y: auto;
+    border: 1px solid #00ffff;
+    box-shadow: 0 0 50px rgba(0, 255, 255, 0.5);
+    position: relative;
+}
+
+.modal-hologram::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(0, 255, 255, 0.05), transparent);
+    pointer-events: none;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 35px;
+    border-bottom: 1px solid rgba(0, 255, 255, 0.3);
+}
+
+.modal-header h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #00ffff;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #888;
+    transition: color 0.3s ease;
+}
+
+.modal-close:hover {
+    color: #00ffff;
+}
+
+.modal-body {
+    padding: 35px;
+}
+
+.modal-body h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #00ffff;
+    border-bottom: 2px solid #00ffff;
+    padding-bottom: 10px;
+}
+
+.modal-body p {
+    margin-bottom: 15px;
+    color: #ccc;
+    line-height: 1.6;
+}
+
+/* Advanced Modal Content */
+.modal-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: rgba(0, 255, 255, 0.05);
+    border-radius: 15px;
+    border: 1px solid rgba(0, 255, 255, 0.2);
+}
+
+.modal-section h5 {
+    font-size: 1.1rem;
+    color: #00ffff;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.modal-section h5 i {
+    font-size: 1.2rem;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.skill-tag {
+    background: rgba(0, 255, 255, 0.2);
+    color: #00ffff;
+    padding: 8px 12px;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    border: 1px solid rgba(0, 255, 255, 0.4);
+    transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+    background: rgba(0, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+.experience-item {
+    background: rgba(0, 17, 34, 0.6);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border-left: 3px solid #00ffff;
+}
+
+.experience-title {
+    font-weight: 600;
+    color: #00ffff;
+    margin-bottom: 5px;
+}
+
+.experience-company {
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.experience-duration {
+    color: #666;
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
+/* AI Notifications */
+.ai-notifications {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10000;
+}
+
+.ai-notification {
+    background: rgba(0, 17, 34, 0.95);
+    color: #00ffff;
+    padding: 20px 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid #00ffff;
+    margin-bottom: 15px;
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    max-width: 400px;
+    animation: notification-slide-in 0.5s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.ai-notification::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(0, 255, 255, 0.1), transparent);
+    animation: notification-scan 2s ease-in-out infinite;
+}
+
+@keyframes notification-slide-in {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes notification-scan {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+.ai-notification.success {
+    border-color: #00ff00;
+    color: #00ff00;
+}
+
+.ai-notification.error {
+    border-color: #ff0000;
+    color: #ff0000;
+}
+
+.ai-notification i {
+    font-size: 1.2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .ai-container {
+        padding: 15px;
+    }
+    
+    .ai-title {
+        font-size: 2rem;
+    }
+    
+    .neural-upload,
+    .ai-processing,
+    .ai-results {
+        padding: 25px 20px;
+    }
+    
+    .matrix-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .results-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .ai-status {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .logo-core {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .neural-rings {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .ring-1 {
+        width: 70px;
+        height: 70px;
+        top: 15px;
+        left: 15px;
+    }
+    
+    .ring-2 {
+        width: 85px;
+        height: 85px;
+        top: 7.5px;
+        left: 7.5px;
+    }
+    
+    .ring-3 {
+        width: 100px;
+        height: 100px;
+        top: 0;
+        left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .ai-title {
+        font-size: 1.5rem;
+    }
+    
+    .ai-subtitle {
+        font-size: 1rem;
+    }
+    
+    .quantum-upload-area {
+        padding: 40px 15px;
+    }
+    
+    .quantum-btn,
+    .quantum-process-btn {
+        padding: 15px 20px;
+        font-size: 1rem;
+    }
+    
+    .logo-core {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .neural-rings {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .ring-1 {
+        width: 60px;
+        height: 60px;
+        top: 10px;
+        left: 10px;
+    }
+    
+    .ring-2 {
+        width: 70px;
+        height: 70px;
+        top: 5px;
+        left: 5px;
+    }
+    
+    .ring-3 {
+        width: 80px;
+        height: 80px;
+        top: 0;
+        left: 0;
+    }
+}
