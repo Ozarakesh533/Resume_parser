@@ -7,6 +7,9 @@
 
 An advanced AI-powered resume parsing system that extracts structured information from PDF, DOCX, TXT, and RTF resume files. Built with FastAPI backend and modern web frontend, featuring intelligent text extraction, contact information parsing, and skills analysis.
 
+## 🎥 Video
+https://github.com/user-attachments/assets/6f94402b-ca27-467f-a24a-77a2de35ab88
+
 ## 🌟 Features
 
 ### 🔍 **Intelligent Resume Parsing**
